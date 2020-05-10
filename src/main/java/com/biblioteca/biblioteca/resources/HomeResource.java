@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.biblioteca.biblioteca.models.Messages;
 
 @RestController
-public class HomeController {
+public class HomeResource {
 
 	@GetMapping("/")
     public Messages home(){

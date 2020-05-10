@@ -30,39 +30,39 @@ import com.biblioteca.biblioteca.repository.LivroRepository;
 @RequestMapping(value = "/api")
 public class LivroResource {
 
-	private LivroRepository produtoRepository;
+	private LivroRepository livroRepository;
 
 	public ProdutoResource(LivroRepository rd) {
-		this.produtoRepository = rd;
+		this.livroRepository = rd;
 	}
 
 	@GetMapping("/livros")
-	public List<Livros> listaProdutos() {
+	public List<Livros> listaLivros() {
 
-		return this.produtoRepository.findAll();
+		return this.livroRepository.findAll();
 
 	}
 
 	@GetMapping("/livros/{id}")
-	public Livros listaProdutoUnico(@PathVariable(value = "id") long id) {
-		return produtoRepository.findById(id);
+	public Livros listaLivrosById(@PathVariable(value = "id") long id) {
+		return livroRepository.findById(id);
 	}
 
 	@PostMapping("/livros")
-	public Livros salvaProduto(@RequestBody @Valid Livros produto) {
-		return produtoRepository.save(produto);
+	public Livros salvaLivro(@RequestBody @Valid Livros livro) {
+		return livroRepository.save(livro);
 	}
 
 	@DeleteMapping("/livros")
-	public Messages deletaProduto(@RequestBody @Valid Livros produto) {
-		produtoRepository.delete(produto);
+	public Messages deletaLivro(@RequestBody @Valid Livros livro) {
+		livroRepository.delete(livro);
 		Messages mg = new Messages("Deletado com sucesso!");
 		mg.setStatus(true);
 		return mg;
 	}
 
 	@PutMapping("/livros")
-	public Livros atualizaProduto(@RequestBody @Valid Livros produto) {
-		return produtoRepository.save(produto);
+	public Livros atualizaLivro(@RequestBody @Valid Livros livro) {
+		return livroRepository.save(livro);
 	}
 }
