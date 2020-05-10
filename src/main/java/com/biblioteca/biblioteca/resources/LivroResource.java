@@ -28,7 +28,7 @@ import com.biblioteca.biblioteca.repository.LivroRepository;
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping(value = "/api")
-public class ProdutoResource {
+public class LivroResource {
 
 	private LivroRepository produtoRepository;
 
