@@ -32,7 +32,7 @@ public class LivroResource {
 
 	private LivroRepository livroRepository;
 
-	public ProdutoResource(LivroRepository rd) {
+	public LivroResource(LivroRepository rd) {
 		this.livroRepository = rd;
 	}
 
